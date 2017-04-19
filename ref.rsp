@@ -1,0 +1,10 @@
+/r:.\lib\Microsoft.Threading.Tasks.dll
+/r:.\lib\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+/r:.\lib\Microsoft.Threading.Tasks.Extensions.dll
+/r:.\lib\Nito.AsyncEx.Concurrent.dll
+/r:.\lib\Nito.AsyncEx.dll
+/r:.\lib\Nito.AsyncEx.Enlightenment.dll
+/r:.\lib\System.Data.SQLite.dll
+/r:System.Runtime.dll
+/r:System.Threading.Tasks.dll
+
