@@ -49,12 +49,12 @@ namespace Yandex_Internship
                         errorLogs.Add(new KeyValuePair<int, string>(currentLine, "Incorrect 'id' value"));
                         continue;
                     }
-                    if (!int.TryParse(splitted[headerOrder["product_id"]], out productId))
+                    if (!int.TryParse(splitted[headerOrder["product_id"]], out productId) || productId > 7 || productId < 1)
                     {
                         errorLogs.Add(new KeyValuePair<int, string>(currentLine, "Incorrect 'product_id'"));
                         continue;
                     }
-                    if (!double.TryParse(splitted[headerOrder["amount"]], out amount))
+                    if (!double.TryParse(splitted[headerOrder["amount"]], out amount) || amount < 0)
                     {
                         errorLogs.Add(new KeyValuePair<int, string>(currentLine, "Incorrect 'amount'"));
                         continue;

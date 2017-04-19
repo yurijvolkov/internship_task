@@ -164,8 +164,8 @@ namespace Yandex_Internship
                         .Where(g => g.Count(row =>
                         {
                             var curDate = DateTime.Parse((string)row["dt"]);
-                            return curDate.Month < DateTime.Now.Month   
-                                   || curDate.Year < DateTime.Now.Year; //filtering products that were sold only in current month
+                            return curDate.Month != DateTime.Now.Month   
+                                   || curDate.Year != DateTime.Now.Year; //filtering products that were sold only in current month
                         }) == 0)
                         .Select(g => productTable.FirstOrDefault(d => (long)d["id"] == (long)g.Key)["name"]); //transforming product_id to it's name
 
