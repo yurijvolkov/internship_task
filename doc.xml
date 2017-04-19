@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>app</name>
+    </assembly>
+    <members>
+        <member name="T:Yandex_Internship.ApiDb">
+            <summary>
+            Static class of methods for interacting with SQLite database
+            </summary>
+        </member>
+        <member name="M:Yandex_Internship.ApiDb.InitDbAsync(System.IProgress{System.Tuple{System.Int64,System.Int64,System.Boolean}})">
+            <summary>
+            Initializing database
+            </summary>
+            <param name="progress">Used for report progress (for more info look at ConsoleProgress summary)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yandex_Internship.ApiDb.AddProducts(System.Collections.Generic.List{Yandex_Internship.Domain.Product},System.IProgress{System.Tuple{System.Int64,System.Int64,System.Boolean}})">
+            <summary>
+            Adding products to DB with help of transactions
+            </summary>
+            <param name="products">List of Product entities</param>
+            <param name="progress">Used for report progress (for more info look at ConsoleProgress summary)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yandex_Internship.ApiDb.AddOrders(System.Collections.Generic.List{Yandex_Internship.Domain.Order},System.IProgress{System.Tuple{System.Int64,System.Int64,System.Boolean}})">
+            <summary>
+            Adding orders to DB with help of transactions
+            </summary>
+            <param name="orders">List of Order entities</param>
+            <param name="progress">Used for report progress (for more info look at ConsoleProgress summary)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Yandex_Internship.ApiDb.MakeRequests(System.IProgress{System.Tuple{System.Int64,System.Int64,System.Boolean}})">
+            <summary>
+            Perform all requests to database
+            </summary>
+            <param name="progress">Used for report progress (for more info look at ConsoleProgress summary)</param>
+            <returns>dynamic object with all responses</returns>
+        </member>
+        <member name="M:Yandex_Internship.Parser.ParseFileAsync(System.String,System.IProgress{System.Tuple{System.Int64,System.Int64,System.Boolean}})">
+            <summary>
+            Parsing input file and returns list of Order entities and list of error logs
+            </summary>
+            <param name="fileName">Path to input file</param>
+            <param name="progress">Used for report progress (for more info look at ConsoleProgress summary)</param>
+            <returns>Tuple ( Item1 : list of correct orders, Item2 : list of error logs (pairs of line number and short explanation))</returns>
+        </member>
+        <member name="T:Yandex_Internship.ConsoleProgress">
+            <summary>
+            Used to show progress from async tasks
+            </summary>
+        </member>
+        <member name="M:Yandex_Internship.ConsoleProgress.Report(System.Tuple{System.Int64,System.Int64,System.Boolean})">
+            <summary>
+            Reporting progress every 5e5 progress stamps
+            </summary>
+            <param name="progress">Tuple values : (Item1 : current progress, Item2 : total progress, Item3 : clear Console or not) </param>
+        </member>
+        <member name="P:Yandex_Internship.ConsoleProgress.Message">
+            <summary>
+            Text displayed before report
+            </summary>
+        </member>
+        <member name="M:Yandex_Internship.Program.DisplayErrorLines(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.Int32,System.String}})">
+            <summary>
+            Displaying numbers of lines that were failed to parse
+            </summary>
+            <param name="errorLogs">Key : number of line, Value : some explanation about fail</param>
+        </member>
+        <member name="M:Yandex_Internship.Program.DisplayResponse(System.Object)">
+            <summary>
+            Displaying results of all requests in human readable format
+            </summary>
+            <param name="response">dynamic object with all responses</param>
+        </member>
+        <member name="T:Yandex_Internship.Domain.Order">
+            <summary>
+            Domain model for order
+            Important : it's not used for any ORM 
+            </summary>
+        </member>
+        <member name="P:Yandex_Internship.Domain.Order.Id">
+            <summary>
+            Ignored while loading entity to database
+            </summary>
+        </member>
+        <member name="T:Yandex_Internship.Domain.Product">
+            <summary>
+            Domain model for product
+            Important : it's not used for any ORM 
+            </summary>
+        </member>
+        <member name="P:Yandex_Internship.Domain.Product.Id">
+            <summary>
+            Ignored while loading entity to database
+            </summary>
+        </member>
+    </members>
+</doc>
