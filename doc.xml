@@ -16,7 +16,7 @@
             <param name="progress">Used for report progress (for more info look at ConsoleProgress summary)</param>
             <returns></returns>
         </member>
-        <member name="M:Yandex_Internship.ApiDb.AddProducts(System.Collections.Generic.List{Yandex_Internship.Domain.Product},System.IProgress{System.Tuple{System.Int64,System.Int64,System.Boolean}})">
+        <member name="M:Yandex_Internship.ApiDb.AddProductsAsync(System.Collections.Generic.List{Yandex_Internship.Domain.Product},System.IProgress{System.Tuple{System.Int64,System.Int64,System.Boolean}})">
             <summary>
             Adding products to DB with help of transactions
             </summary>
@@ -24,7 +24,7 @@
             <param name="progress">Used for report progress (for more info look at ConsoleProgress summary)</param>
             <returns></returns>
         </member>
-        <member name="M:Yandex_Internship.ApiDb.AddOrders(System.Collections.Generic.List{Yandex_Internship.Domain.Order},System.IProgress{System.Tuple{System.Int64,System.Int64,System.Boolean}})">
+        <member name="M:Yandex_Internship.ApiDb.AddOrdersAsync(System.Collections.Generic.List{Yandex_Internship.Domain.Order},System.IProgress{System.Tuple{System.Int64,System.Int64,System.Boolean}})">
             <summary>
             Adding orders to DB with help of transactions
             </summary>

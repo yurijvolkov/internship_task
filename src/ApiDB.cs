@@ -47,7 +47,7 @@ namespace Yandex_Internship
                     new Product(7, "G")
                 });
 
-            await AddProducts(products, new ConsoleProgress("В базу добавляются товары (product)")); //preloading content of 'product' table (as said in task)
+            await AddProductsAsync(products, new ConsoleProgress("В базу добавляются товары (product)")); //preloading content of 'product' table (as said in task)
 
             progress.Report(new Tuple<long, long, bool>(1, -1, true));
         }
@@ -58,7 +58,7 @@ namespace Yandex_Internship
         /// <param name="products">List of Product entities</param>
         /// <param name="progress">Used for report progress (for more info look at ConsoleProgress summary)</param>
         /// <returns></returns>
-        internal static Task AddProducts(List<Product> products, IProgress<Tuple<long, long, bool>> progress)
+        internal static Task AddProductsAsync(List<Product> products, IProgress<Tuple<long, long, bool>> progress)
         {
             return Task.Run(() =>
             {
@@ -88,7 +88,7 @@ namespace Yandex_Internship
         /// <param name="orders">List of Order entities</param>
         /// <param name="progress">Used for report progress (for more info look at ConsoleProgress summary)</param>
         /// <returns></returns>
-        internal static Task AddOrders(List<Order> orders, IProgress<Tuple<long, long, bool>> progress)
+        internal static Task AddOrdersAsync(List<Order> orders, IProgress<Tuple<long, long, bool>> progress)
         {
             return Task.Run(() =>
             {

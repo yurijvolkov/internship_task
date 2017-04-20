@@ -49,11 +49,11 @@ namespace Yandex_Internship
         {
             try
             {
-                var parsingFile = await Parser.ParseFileAsync(args[0], new ConsoleProgress("Парсинг строк")); 
-
+                var parsingFileTask = Parser.ParseFileAsync(args[0], new ConsoleProgress("Парсинг строк")); 
                 await ApiDb.InitDbAsync(new ConsoleProgress("Инициализация бд")); //creating tables, filling products table, etc 
 
-                await ApiDb.AddOrders(parsingFile.Item1, new ConsoleProgress("В базу добавляются заказы (order)"));
+                var parsingFile = await parsingFileTask;
+                await ApiDb.AddOrdersAsync(parsingFile.Item1, new ConsoleProgress("В базу добавляются заказы (order)"));
 
                 Console.Clear();
                 DisplayErrorLines(parsingFile.Item2);
